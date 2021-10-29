@@ -27,7 +27,7 @@ public class LearningPartyServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException
                     ("User with email doesn't exist");
         }
-        return new User(user.getEmail(), user.getPassword(), user.getAuthorities());
+        return new User(user.getEmail(), user.getPassword(), getAuthorities(user.getAuthorities()));
     }
 
     private List<SimpleGrantedAuthority> getAuthorities(List<Authority> authorities){
