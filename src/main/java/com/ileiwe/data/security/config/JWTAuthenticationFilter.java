@@ -23,7 +23,7 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 import static com.ileiwe.data.security.config.SecurityConstants.*;
 
 @Slf4j
-public class JMTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     @Autowired
     private AuthenticationManager authenticationManager;
