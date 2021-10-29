@@ -1,13 +1,17 @@
 package com.ileiwe.data.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
 @Data
-public class Authority {
+@RequiredArgsConstructor
+public class Authority implements GrantedAuthority {
 
     @Id
     @GeneratedValue
@@ -16,5 +20,9 @@ public class Authority {
     private Role authority;
     @ManyToOne
     private LearningParty user;
+
+    public Authority(Role role){
+        this.authority = role;
+    }
 
 }

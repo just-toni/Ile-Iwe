@@ -26,7 +26,7 @@ class IleIweApplicationTests {
 	void connectionToDatabaseTest(){
 		assertThat(dataSource).isNotNull();
 
-		try(Connection connection = new dataSource.getConnection()){
+		try(Connection connection = dataSource.getConnection()){
 			assertThat(connection).isNotNull();
 			assertThat(connection.getCatalog()).isEqualTo("ileiwedb");
 		}

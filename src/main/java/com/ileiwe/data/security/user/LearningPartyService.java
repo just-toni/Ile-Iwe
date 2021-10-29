@@ -1,4 +1,4 @@
-package com.ileiwe.service;
+package com.ileiwe.data.security.user;
 
-public interface LearningPartyService {
+public class LearningPartyService {
 }

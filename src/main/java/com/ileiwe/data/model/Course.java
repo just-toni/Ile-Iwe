@@ -1,16 +1,21 @@
 package com.ileiwe.data.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Entity;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Data
 @Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Course {
 
     @Id
@@ -34,5 +39,9 @@ public class Course {
     private Instructor instructor;
     @ManyToMany
     private List<Student> students;
+
+    public Course(String title) {
+        this.title = title;
+    }
 
 }

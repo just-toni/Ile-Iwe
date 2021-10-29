@@ -1,7 +1,6 @@
 package com.ileiwe.data.model;
 
 import lombok.Data;
-import org.hibernate.annotations.Entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
