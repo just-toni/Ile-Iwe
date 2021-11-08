@@ -11,7 +11,8 @@ import java.util.UUID;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class Authority implements GrantedAuthority {
+public class Authority
+        implements GrantedAuthority {
 
     @Id
     @GeneratedValue
