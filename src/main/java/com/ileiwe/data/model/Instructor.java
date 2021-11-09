@@ -25,6 +25,7 @@ public class Instructor {
     @NotNull    @NotBlank
     @Column(nullable = false)
     private String firstName;
+    @NotNull    @NotBlank
     @Column(nullable = false)
     private String lastName;
     private Gender gender;
