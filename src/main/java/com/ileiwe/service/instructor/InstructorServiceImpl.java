@@ -6,6 +6,7 @@ import com.ileiwe.data.model.LearningParty;
 import com.ileiwe.data.model.Role;
 import com.ileiwe.data.repository.InstructorRepository;
 import com.ileiwe.data.repository.LearningPartyRepository;
+import com.ileiwe.service.event.OnRegistrationCompleteEvent;
 import com.ileiwe.service.exception.UserAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -43,8 +44,8 @@ public class InstructorServiceImpl implements InstructorService{
                     , new Authority(Role.ROLE_INSTRUCTOR));
 
             Instructor instructor = Instructor.builder()
-                    .lastname(instructorDto.getLastname())
-                    .firstname(instructorDto.getFirstname())
+                    .lastName(instructorDto.getLastname())
+                    .firstName(instructorDto.getFirstname())
                     .learningParty(learningParty).build();
 
             eventPublisher.publishEvent
