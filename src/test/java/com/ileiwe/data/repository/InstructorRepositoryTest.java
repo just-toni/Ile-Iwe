@@ -63,6 +63,7 @@ class InstructorRepositoryTest {
         Instructor fromDb = instructorRepository.findById(instructor.getId()).orElse(null);
         assertThat(fromDb).isNotNull();
         fromDb.setFirstName("John");
+
         fromDb.setLastName("Lamade");
         fromDb.setBio("John Lamade is a Doctor of Engineering at the University of Benin");
         fromDb.setGender(Gender.MALE);
